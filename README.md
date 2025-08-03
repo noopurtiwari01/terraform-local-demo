@@ -70,6 +70,47 @@ Objective: Create and use a local module.
     - variables.tf
     - outputs.tf
 
+### 📁 folder7-tfvars
+
+- Introduces terraform.tfvars
+- Demonstrates user-defined inputs and parameterization
+- Best practice for passing values across environments
+
+### 📁 folder8-count-foreach
+
+- Uses count and for_each with a list of fruits
+- Dynamically creates multiple files using local_file
+- Illustrates iteration patterns in Terraform
+
+### 📁 folder9-outputs-datasource
+
+- Uses `data "local_file"` to read contents of a file created by Terraform
+- Demonstrates use of `output` blocks to show file content
+- Basic data source usage without showing overwritten vs original content
+
+### 📁 folder10-dynamic-block-ingress
+
+- Demonstrates use of `dynamic` blocks in Terraform
+- Dynamically generates multiple `ingress` blocks in a mock security group
+- Helpful for generating repeated nested blocks based on variable or local values
+
+### 📁 folder11-lifecycle
+
+- Demonstrates use of the `lifecycle` block to control resource behavior
+- Uses `prevent_destroy = true` to block deletion of a local file
+- Uses `create_before_destroy = true` and `ignore_changes` for better control
+
+#### 🧪 Commands to Try:
+
+```bash
+terraform init
+terraform apply    # Creates the file
+terraform destroy  # Fails due to prevent_destroy
+terraform plan     # Shows no changes if file is unchanged
+```
+
+📝 Note: Even if the file is manually deleted from the system, Terraform won't recreate it unless triggered by changes. Lifecycle rules help protect against accidental deletions or replacements.
+
 ## 🚀 Usage
 For each folder:
 
