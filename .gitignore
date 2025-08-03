@@ -1,0 +1,12 @@
+# Terraform files
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Local generated files
+*.txt
+
+# IDE/editor configs
+.vscode/
+.DS_Store
